@@ -1,12 +1,14 @@
 # aula-2
 sequencia e inserção em uma tabela usando dados de outra tabela 
+```sql
 CREATE SEQUENCE sequencia
 INCREMENT 5
 MINVALUE 100
 MAXVALUE 999
 START 100
 CACHE 1;
-
+```
+```sql
 --inserindo dados em uma tabela utilizando outra
 
 INSERT INTO dept_inf(nome, num_empreg, somasalario)
@@ -15,7 +17,8 @@ FROM empregado E, departamento D
 WHERE E.num_dept=D.num_dept
 GROUP BY D.nome
 HAVING COUNT(*)>50;
-
+```
+```sql
 --ATUALIZANDO TABELAS
 
 UPDATE empregado SET salario = 2500 WHERE matricula=1;
@@ -41,4 +44,4 @@ SELECT * FROM empregado WHERE nome LIKE '% duran';
 SELECT AVG(salario) FROM empregado; 
 
 SELECT E.nome, E.salario FROM empregado E WHERE E.salario>2500;
-
+```
